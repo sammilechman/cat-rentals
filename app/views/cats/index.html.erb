@@ -1,0 +1,10 @@
+<b>Ok Cat<b>
+
+<ul>
+  <% @cats.each do |cat| %>
+    <li>
+      Name: <%= cat.name %>
+      <%= link_to "Link:", cat_url(cat)%>
+    </li>
+  <% end %>
+</ul>
