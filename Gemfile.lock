@@ -26,7 +26,11 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     addressable (2.3.6)
+    annotate (2.6.3)
+      activerecord (>= 2.3.0)
+      rake (>= 0.8.7)
     arel (4.0.2)
+    bcrypt (3.1.7)
     better_errors (1.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -125,6 +129,8 @@ PLATFORMS
 
 DEPENDENCIES
   addressable
+  annotate
+  bcrypt
   better_errors
   binding_of_caller
   coffee-rails (~> 4.0.0)

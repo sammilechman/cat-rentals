@@ -1,11 +1,7 @@
-<h1>Cool Cat</h1>
+<h1><%= @cat.name %></h1>
 
 <p>
 <table style="width:300px">
-  <tr>
-    <td>name</td>
-    <td><%=@cat.name%></td>
-  </tr>
   <tr>
     <td>age</td>
     <td><%=@cat.age%></td>
@@ -36,7 +32,7 @@
       <td> <%=request.start_date%>  </td>
       <td> <%=request.end_date%></td>
       <td>
-        <% if request.pending? %>
+        <% if request.pending? && current_owner? %>
         <%= button_to "Approve", approve_cat_rental_request_url(request) %>
         <%= button_to "Deny", deny_cat_rental_request_url(request) %>
         <% else %>
@@ -47,3 +43,10 @@
   <%end%>
 </table>
 
+<br>
+
+<%= link_to "Back to Cats Index", root_url %>
+
+<br>
+
+<%= link_to "Request a rental for a cat", new_cat_rental_request_url %>

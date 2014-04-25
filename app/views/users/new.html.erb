@@ -1,0 +1,23 @@
+<head>
+  <title>
+    Create a new username/password
+  </title>
+</head>
+<body>
+  <h1>
+    Create a new username/password
+  </h1>
+  <form action="<%= users_url %>" method="POST">
+    <%= auth_token_input %>
+
+    <label for="user_name"> Pick a user name: </label>
+    <input type="text" name="user[user_name]" id="user_input" value=<%=@user.user_name%> >
+    <label for= "password"> Pick a password: </label>
+    <input type="password" name="user[password]" id="password">
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <p><%= link_to "Return to Cat index", cats_url %>
+
+</body>

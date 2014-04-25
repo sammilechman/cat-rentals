@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: cat_rental_requests
+#
+#  id         :integer          not null, primary key
+#  cat_id     :integer          not null
+#  start_date :date             not null
+#  end_date   :date             not null
+#  status     :string(255)      default("PENDING")
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 require 'debugger'
 
 class CatRentalRequest < ActiveRecord::Base
@@ -46,10 +59,10 @@ class CatRentalRequest < ActiveRecord::Base
   def overlapping_approved_requests
     overlapping_requests.each do |request|
       if request.status == 'APPROVED'
-        errors[:base] << "Busy cat."
+        errors[:base] = "Busy cat, can't rent at that time, sorry."
+        break
       end
     end
-    # debugger
 
   end
 end
